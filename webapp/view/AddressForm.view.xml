@@ -1,0 +1,60 @@
+<mvc:View controllerName="qh.addressautocomplete.AddressAutocomplete.controller.AddressForm" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" displayBlock="true">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:Form id="FormToolbar" editable="true" ariaLabelledBy="Title1">
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4"
+									emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer ariaLabelledBy="Title2">
+									<f:formElements>
+										<f:FormElement label="Enter Address">
+											<f:fields>
+												<Input id="autocomplete" placeholder="Start entering your address..."/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="Street">
+											<f:fields>
+												<Input value="{addressModel>/HouseNumber}">
+													<layoutData>
+														<l:GridData span="XL2 L1 M3 S4"/>
+													</layoutData>
+												</Input>
+												<Input value="{addressModel>/Street}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="ZIP Code/City">
+											<f:fields>
+												<Input value="{addressModel>/ZIPCode}">
+													<layoutData>
+														<l:GridData span="XL2 L1 M3 S4"/>
+													</layoutData>
+												</Input>
+												<Input value="{addressModel>/City}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="State/Country">
+											<f:fields>
+													<Input value="{addressModel>/State}">
+													<layoutData>
+														<l:GridData span="XL2 L1 M3 S4"/>
+													</layoutData>
+												</Input>
+												<Input value="{addressModel>/Country}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
